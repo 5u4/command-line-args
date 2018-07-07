@@ -52,6 +52,15 @@ class CommandLineArgsTest(unittest.TestCase):
         result = CommandLineArgs.auto_convert("10f")
         self.assertIs(type(result), str)
 
+    def test_parse_args(self):
+        args = ['--flag', '--params=10', 'arg']
+        parsed_args = CommandLineArgs.parse_args(args)
+        self.assertDictEqual(parsed_args, {
+            'flags': {'flag': True},
+            'params': {'params': 10},
+            'arguments': ['arg']
+        })
+
 
 if __name__ == '__main__':
     unittest.main()
