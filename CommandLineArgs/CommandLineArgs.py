@@ -164,7 +164,7 @@ class CommandLineArgs:
 
             # if is ordered argument | e.g. some
             else:
-                options['arguments'].append(arg)
+                options['arguments'].append(CommandLineArgs.auto_convert(arg))
 
         return options
 
