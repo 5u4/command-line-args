@@ -200,7 +200,7 @@ class CommandLineArgs:
             bool
             int
             float
-            string
+            str
         """
 
         for fn in (CommandLineArgs.boolify, int, float):
